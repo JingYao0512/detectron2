@@ -484,7 +484,7 @@ py::dict Accumulate(
 #ifdef _WIN32
   localtime_s(&local_time, &rawtime);
 #else
-  localtime_r(&rawtime, &local_time);
+  localtime_s(&rawtime, &local_time);
 #endif
   strftime(
       buffer.data(), 200, "%Y-%m-%d %H:%num_max_detections:%S", &local_time);
